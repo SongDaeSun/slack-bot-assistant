@@ -1,6 +1,7 @@
 import requests
+import time
 
-class bot_info ():
+class GeneralAssistant():
 
     def __init__(self, channel, header_length, header_title):
 
@@ -17,30 +18,32 @@ class bot_info ():
         self.build_header()
 
     def build_header(self):
-        deco_num = int((self.header_length - len(self.header_title))/2)
-        deco = '_' * deco_num
-        self.header = deco + self.header_title + deco + '\n'
+        self.header = "_" * self.header_length + '\n'
+        self.header += self.header_title +'\n'
 
 
-    def build_message(self, text):
-        built_message =  self.header + text + '\n'
+    def post_message(self, text):
+        full_message =  self.header + text + '\n' + self.getTimeStamp()
 
-        return built_message
+        self.send_message(full_message)
+
+    
+    def getTimeStamp(self):
+        tm = time.localtime(1575142526.500323)
+        string = time.strftime('%Y-%m-%d %I:%M:%S %p', tm)
+        
+        return string
+        
         
  
-    def post_message(self, text):
-
-        full_message = self.build_message(text)
-
-        response = requests.post("https://slack.com/api/chat.postMessage",
+    def send_message(self, text):
+        requests.post("https://slack.com/api/chat.postMessage",
             headers={"Authorization": "Bearer "+self.token},
-            data={"channel": "#" + self.channel, "text": full_message}
+            data={"channel": "#" + self.channel, "text": text}
         )
-        print(response)
-    
-    
 
-bot = bot_info("학업", 32, '수업알림')
-bot.post_message("test")
+if __name__ == "__main__" :
+    bot = GeneralAssistant("학업", 32, '수업알림')
+    bot.post_message("test")
 
 
