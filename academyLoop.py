@@ -27,7 +27,7 @@ def getCourseTime():
 
     course = ("경제원론2", [])
     course[1].append((0, datetime.time(hour=17, minute=0), datetime.time(hour=18, minute=15)))
-    course[1].append((2, datetime.time(hour=17, minute=7), datetime.time(hour=18, minute=15)))
+    course[1].append((2, datetime.time(hour=17, minute=0), datetime.time(hour=18, minute=15)))
     courses.append(course)
 
 
