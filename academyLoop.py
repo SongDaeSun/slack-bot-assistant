@@ -7,7 +7,14 @@ import datetime
 def getCourseTime():
     courses = []
 
-    course = ("서양기독교사", [])
+    course = ("경제원론I", [])
+    course[1].append((0, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
+    course[1].append((1, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
+    course[1].append((2, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
+    course[1].append((3, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
+    courses.append(course)
+
+    """
     course[1].append((0, datetime.time(hour=12, minute=0), datetime.time(hour=13, minute=15)))
     course[1].append((2, datetime.time(hour=12, minute=0), datetime.time(hour=13, minute=15)))
     courses.append(course)
@@ -41,6 +48,7 @@ def getCourseTime():
     course[1].append((1, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
     course[1].append((3, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
     courses.append(course)
+    """
 
     return courses
 
@@ -49,7 +57,7 @@ def main () :
     courses = getCourseTime()
     day = datetime.datetime.today().weekday()
 
-    bot = AcademyAssistant("학업", 31, '3개월만 버티자')
+    bot = AcademyAssistant("학업", 31, '여호와를 아는 것이 지혜의 근본이라')
 
     while True : 
         now = datetime.datetime.now()
@@ -81,4 +89,5 @@ def main () :
 
 
 if __name__ == "__main__" :
+    print("Academy Slack Assistant")
     main()
