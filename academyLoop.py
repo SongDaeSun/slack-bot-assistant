@@ -26,7 +26,7 @@ def getCourseTime():
 
 
     course = ("컴퓨터구조", [])
-    course[1].append((4, datetime.time(hour=12, minute=00), datetime.time(hour=15, minute=15)))
+    course[1].append((4, datetime.time(hour=12, minute=0), datetime.time(hour=15, minute=15)))
     courses.append(course)
 
     return courses
