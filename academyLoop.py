@@ -7,48 +7,27 @@ import datetime
 def getCourseTime():
     courses = []
 
-    course = ("경제원론I", [])
-    course[1].append((0, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
-    course[1].append((1, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
-    course[1].append((2, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
-    course[1].append((3, datetime.time(hour=13, minute=0), datetime.time(hour=15, minute=50)))
-    courses.append(course)
-
-    """
-    course[1].append((0, datetime.time(hour=12, minute=0), datetime.time(hour=13, minute=15)))
-    course[1].append((2, datetime.time(hour=12, minute=0), datetime.time(hour=13, minute=15)))
+    course = ("계량경제학I", [])
+    course[1].append((0, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
+    course[1].append((2, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
     courses.append(course)
 
 
-    course = ("재무관리", [])
+    course = ("보험통계학", [])
     course[1].append((0, datetime.time(hour=14, minute=0), datetime.time(hour=15, minute=15)))
     course[1].append((2, datetime.time(hour=14, minute=0), datetime.time(hour=15, minute=15)))
     courses.append(course)
 
 
-    course = ("회귀분석", [])
-    course[1].append((0, datetime.time(hour=15, minute=30), datetime.time(hour=16, minute=45)))
-    course[1].append((2, datetime.time(hour=15, minute=30), datetime.time(hour=16, minute=45)))
+    course = ("선물옵션", [])
+    course[1].append((1, datetime.time(hour=15, minute=30), datetime.time(hour=16, minute=45)))
+    course[1].append((3, datetime.time(hour=15, minute=30), datetime.time(hour=16, minute=45)))
     courses.append(course)
 
 
-    course = ("경제원론2", [])
-    course[1].append((0, datetime.time(hour=17, minute=0), datetime.time(hour=18, minute=15)))
-    course[1].append((2, datetime.time(hour=17, minute=0), datetime.time(hour=18, minute=15)))
+    course = ("컴퓨터구조", [])
+    course[1].append((4, datetime.time(hour=12, minute=00), datetime.time(hour=15, minute=15)))
     courses.append(course)
-
-
-    course = ("확률론입문", [])
-    course[1].append((1, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
-    course[1].append((3, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
-    courses.append(course)
-
-
-    course = ("데이터베이스", [])
-    course[1].append((1, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
-    course[1].append((3, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
-    courses.append(course)
-    """
 
     return courses
 
@@ -89,5 +68,8 @@ def main () :
 
 
 if __name__ == "__main__" :
-    print("Academy Slack Assistant")
+    while True:
+        now = datetime.datetime.now()
+        if now.second == 0:
+            break
     main()

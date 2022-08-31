@@ -5,7 +5,7 @@ class GeneralAssistant():
 
     def __init__(self, channel, header_length, header_title):
 
-        f = open("C:\\programming\\slack-bot-assistant\\myToken.txt", 'r')
+        f = open("myToken.txt", 'r')
         lines = f.readlines()
         self.token = lines[0]
 
