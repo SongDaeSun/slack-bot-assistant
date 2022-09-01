@@ -36,6 +36,12 @@ def main () :
     courses = getCourseTime()
     day = datetime.datetime.today().weekday()
 
+    print(day)
+    for course in courses:
+        for courseTime in course[1]:
+            if courseTime[0] == day:
+                print(course)
+
     bot = AcademyAssistant("학업", 31, '여호와를 아는 것이 지혜의 근본이라')
 
     while True : 
@@ -64,6 +70,9 @@ def main () :
                         bot.post_message(course[0], False, False)
 
         time.sleep(60)
+
+        if now.hour == 0 and now.minute == 1:
+            day = datetime.datetime.today().weekday()
 
 
 
