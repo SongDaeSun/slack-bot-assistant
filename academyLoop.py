@@ -8,16 +8,9 @@ def getCourseTime():
     courses = []
 
     course = ("계량경제학I", [])
-    course[1].append((0, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
-    course[1].append((2, datetime.time(hour=9, minute=0), datetime.time(hour=10, minute=15)))
+    course[1].append((0, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
+    course[1].append((2, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
     courses.append(course)
-
-
-    course = ("보험통계학", [])
-    course[1].append((0, datetime.time(hour=14, minute=0), datetime.time(hour=15, minute=15)))
-    course[1].append((2, datetime.time(hour=14, minute=0), datetime.time(hour=15, minute=15)))
-    courses.append(course)
-
 
     course = ("선물옵션", [])
     course[1].append((1, datetime.time(hour=15, minute=30), datetime.time(hour=16, minute=45)))
