@@ -7,7 +7,7 @@ import datetime
 def getCourseTime():
     courses = []
 
-    course = ("계량경제학I", [])
+    course = ("거시경제이론", [])
     course[1].append((0, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
     course[1].append((2, datetime.time(hour=10, minute=30), datetime.time(hour=11, minute=45)))
     courses.append(course)
